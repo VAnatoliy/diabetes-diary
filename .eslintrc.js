@@ -1,0 +1,45 @@
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'tsconfig.json',
+    tsconfigRootDir : __dirname,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint/eslint-plugin'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+  ],
+  root: true,
+  env: {
+    node: true,
+    jest: true,
+  },
+  ignorePatterns: ['.eslintrc.js'],
+  rules: {
+    "no-console": "error",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-throw-literal": "off",
+    "object-shorthand": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "no-useless-return": "error",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "no-trailing-spaces": "error",
+    "no-multi-spaces": "error",
+    "prefer-template": "error",
+    "quotes": ["error", "single"],
+    "no-param-reassign": "error",
+    "global-require": "error",
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "always-multiline"
+    }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "semi": "off",
+    "@typescript-eslint/semi": ["error"],
+    "max-len": ["error", 120],
+  },
+};
